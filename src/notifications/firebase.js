@@ -27,3 +27,13 @@ export const generateToken = async () => {
 };
   }
  
+export const getFcmToken = async () => {
+  try {
+    const currentToken = await getToken(messaging, { vapidKey: 'BA4xmbZViJnEq_qYCEVhsHLbhKjin9FGJK3ALQQRxwndDIzcXU4mC4EE3NxEfa0dCHxWBeb2uTudXJJqDOlKJWA' });
+    return currentToken;
+  } catch (err) {
+    console.error('Erro ao obter token FCM:', err);
+    return null;
+  }
+}
+ 
